@@ -1,0 +1,149 @@
+* {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+}
+
+h1 {
+        font-family: 'Oswald', sans-serif;
+}
+
+p {
+        font-family: 'Open Sans', sans-serif;
+}
+
+/* Body - Grid setup */
+body {
+        display: grid;
+        grid-template-areas: 
+                "header"
+                "navigation"
+                "content"
+                "footer";
+
+        grid-template-rows: 
+                auto
+                auto
+                1fr
+                auto;
+}
+
+/* Header */
+header {
+        line-height: 1;
+        padding: 2em;
+        background-color: #FAED27;
+        color: black;
+        grid-area: header;
+
+}
+
+header h1 {
+        font-family: 'Oswald', sans-serif;
+}
+
+header p {
+        font-family: 'Open Sans', sans-serif;
+}
+
+/* Navigation */
+nav {
+        grid-area: navigation;
+        background-color: rgb(218, 206, 42);
+        
+}
+
+nav a {
+        display: block;
+        padding: .6em;
+        text-decoration: none;
+        -webkit-box-shadow: 0px 1px 0.5px 0px rgba(0,0,0,0.42);
+        -moz-box-shadow: 0px 1px 0.5px 0px rgba(0,0,0,0.42);
+        box-shadow: 0px 1px 0.5px 0px rgba(0,0,0,0.42);
+}
+
+/* Content */
+main {
+        max-width: 100vw;
+        display: grid;
+        grid-area: content;
+        grid-template-areas:
+                "um-csgo"
+                "youtube-video"
+                "um-esports"
+                "esports-myndir"; 
+        padding: 1em 1.5em;
+        background-image: url("img/bg.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center; 
+}
+
+
+.youtube-video {
+        display: flex;
+} 
+
+.youtube-video iframe {
+        flex: 1;
+ }
+
+.um-csgo {
+       grid-area: um-csgo;
+}
+
+main {
+        max-width: 100vw;
+}
+
+main h1 {
+        color: #FAED27;
+}
+
+main p {
+        color: white;
+}
+
+.um-esports {
+        grid-area: um-esports;
+}
+
+.esports-myndir {
+        grid-area: esports-myndir;
+}
+
+.esports-myndir img {
+        width: 100%;
+        height: auto;
+        vertical-align: top;
+}
+
+.box {
+        padding: 1em;
+        background-color: rgba(0, 0, 0, 0.3);
+        height: 100%;
+}
+
+/* Footer */
+footer {
+        padding: 1.5em 3em;
+        background-color: #FAED27;
+        grid-area: footer;
+}
+
+/* Breakpoints - snid */
+
+@media only screen and (min-width: 41em) {
+        main {
+                grid-template-areas: 
+                        "um-csgo youtube-video"
+                        "um-esports um-esports"
+                        "esports-myndir esports-myndir";
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 1em;
+        }
+
+        .esports-myndir img {
+                width: 32%;
+        }
+}
